@@ -1,0 +1,43 @@
+#main{
+    margin: auto;
+    margin-top: 100px;
+    background-color: #999999;
+    text-align: center;
+    width: 200px;
+}
+
+#sendBox{
+    display:block;
+    text-align: right;
+}
+
+#receiveBox{
+    text-align:left;
+}
+
+#ServerBox{
+    text-align: center;
+}
+
+#sendMsg{
+    display:block;
+    background-color: lightcyan;
+    text-align:right;
+}
+
+#receiveMsg{
+    width:auto;
+    background-color: lightgray;
+}
+
+#ServerMsg{
+    background-color: red;
+    color: white;
+}
+
+
+
+#send{
+    width: 200px;
+    float:left;
+}

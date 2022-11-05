@@ -1,0 +1,17 @@
+<html>
+	<head>
+		<title>Register</title>
+		<script src="/js/index.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+	</head>
+	
+	<body>
+		<form id="register_form" action="/register_progress" method="POST">
+			<input id = "id" type="text" name="id" placeholder="ID">
+			<input id="pw1" type="password" name="pw1" placeholder="PW">
+			<input id="pw2" type="password" name="pw2" placeholder="PW Again">
+			<input id="name" type="text" name="name" placeholder="Name">
+			<input type="submit" onclick="register()" text="register">
+		</form>
+	</body>
+</html>

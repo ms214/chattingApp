@@ -1,0 +1,4 @@
+node_modules/*
+goorm.manifest
+package-lock.json
+README.md

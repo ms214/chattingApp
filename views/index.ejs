@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%=title%></title>
+        <link rel="stylesheet" href="/css/index.css">
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="/js/index.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    </head>
+    <body>
+		<div id="main">
+			<div id="loginForm">
+				<form id="mainForm" method="post" action="/login_progress">
+					<input id="id" type="text", name="id" placeholder="ID">
+					<input id="pw" type="password", name="pw" placeholder="PW">
+					<input type="submit" onclick="login()" text="LOGIN">
+				</form>
+				<a href="/register">
+					Register
+				</a>
+			</div>
+		</div>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title><%=title%></title>
+        <link rel="stylesheet" href="/css/index.css">
+        <script src="/socket.io/socket.io.js"></script>
+		<script>
+			var socket = io();
+			socket.on('connect', function(){
+				//var name = prompt('반갑습니다!', '');
+				var name= '<%=name%>';
+
+				if(!name){
+					name = '익명';
+				}
+
+				socket.emit('newUser', name);
+				socket.on('update', function(data){
+				console.log(`${data.name}: ${data.message}`);
+				console.log(data.name);
+				if(data.type=='message')
+					document.getElementById('messageBox').innerHTML+='<div id="receiveBox"><p id="receiveMsg">'+data.name+':'+data.message+'</p></div>';
+				else
+					document.getElementById('messageBox').innerHTML+='<div id="ServerBox"><p id="ServerMsg">'+data.message+'</p></div>';
+				});
+			});
+			
+			const text = document.getElementById('test');
+			text.addEventListner("keyup", (event)=>{
+			   if(event.keyCode === 13){
+				   send();
+			   } 
+			});
+
+			function send(){
+				var message = document.getElementById('test').value;
+
+				document.getElementById('test').value='';
+
+				document.getElementById('messageBox').innerHTML+='<div id="sendBox"><p id="sendMsg">'+message+'</p></div>';
+
+				socket.emit('message', {type: 'message', message: message});
+			}
+		</script>
+		<!--<script src="/js/chatting.js"></script>-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+    </head>
+    <body>
+        <div id="messageBox">
+		</div>
+		<div id="send">
+				<input type="text" id="test">
+				<button type="button" onclick="send()">전송</button>
+		</div>
+    </body>
+</html>
