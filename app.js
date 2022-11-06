@@ -59,7 +59,9 @@ app.post('/login_progress', (req, res)=>{
 				res.redirect('/');
 			})
 		}else{
-			res.send("Wrong Information.");
+			res.write('<script>alert("Wrong Information")</script>'); 
+			res.write('<script>window.location.href="/"</script>');
+			res.send();
 		}
 	});
     
@@ -81,6 +83,16 @@ app.post("/register_progress", (req, res)=>{
 		}
 	})
 	console.log(id, pw, name);
+});
+
+app.get("/logout", (req, res)=>{
+	delete req.session.name;
+	delete req.session.isLogined;
+	delete req.session.user_id;
+	res.write('<script>alert("로그아웃 되었습니다.")</script>'); 
+	res.write('<script>window.location.href="/"</script>');
+	res.send();
+	
 });
 
 /*Socket Code*/

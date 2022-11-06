@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title><%=title%></title>
-        <link rel="stylesheet" href="/css/index.css">
+        <link rel="stylesheet" href="/css/chat.css">
         <script src="/socket.io/socket.io.js"></script>
 		<script>
 			var socket = io();
@@ -42,15 +42,20 @@
 				socket.emit('message', {type: 'message', message: message});
 			}
 		</script>
-		<!--<script src="/js/chatting.js"></script>-->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
     </head>
     <body>
-        <div id="messageBox">
+		<div id="userInfo">
+			<p><%=name%></p>
+			<button id="logout" onclick="window.location.href='/logout'">로그아웃</button>
 		</div>
-		<div id="send">
-				<input type="text" id="test">
-				<button type="button" onclick="send()">전송</button>
+		<div id="chatting_room">
+			<div id="messageBox">
+			</div>
+			<div id="send">
+					<input type="text" id="test">
+					<button type="button" onclick="send()">전송</button>
+			</div>
 		</div>
     </body>
 </html>

@@ -1,0 +1,50 @@
+/*User Info*/
+#userInfo{
+	display:block;
+	text-align: right;
+	background-color: #d7e6e5;
+}
+
+
+/*chatting*/
+#chatting_room{
+	background-color:#BCBAB5;
+}
+
+#send{
+    width: 200px;
+    float:left;
+}
+
+#sendMsg{
+    display:block;
+    background-color: #B1C4D2;
+    text-align:right;
+}
+
+#receiveMsg{
+    width:auto;
+    background-color: #99C3A6;
+}
+
+#ServerMsg{
+    background-color: #F35336;
+    color: white;
+	width: max-content;
+	padding: 5px;
+}
+#sendBox{
+    display:flex;
+    text-align: right;
+	align-items: right;
+}
+
+#receiveBox{
+    text-align:left;
+}
+
+#ServerBox{
+	display: flex;
+	margin: 10px;
+	align-items: center;
+}
